@@ -4,6 +4,9 @@ export enum Item {
     IronPlate,
     IronRod,
 
+    Screw,
+    ReinforcedIronPlate,
+
     Coal,
     CompactedCoal,
     PetroleumCoke,
@@ -20,4 +23,5 @@ export enum Item {
     Water,
 
     Plastic,
+    Rubber,
 }
