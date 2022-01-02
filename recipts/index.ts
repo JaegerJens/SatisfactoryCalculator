@@ -4,5 +4,6 @@ export { ReinforcedIronPlateRecipts } from './reinforced-iron-plate';
 export { RotorRecipts } from './rotor';
 
 export { CopperIngotRecipts } from './copper-ingot';
+export { CopperSheetRecipts } from './copper-sheet';
 
 export { SteelIngotRecipts } from './steel-ingot';
