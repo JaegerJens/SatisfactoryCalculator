@@ -11,6 +11,10 @@ export enum Item {
     Coal,
     CompactedCoal,
     PetroleumCoke,
+
+    CateriumOre,
+    CateriumIngot,
+    CateriumWire,
     
     SteelIngot,
     SteelBeam,
