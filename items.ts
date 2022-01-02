@@ -14,7 +14,7 @@ export enum Item {
 
     CateriumOre,
     CateriumIngot,
-    CateriumWire,
+    Quickwire,
     
     SteelIngot,
     SteelBeam,
@@ -30,4 +30,5 @@ export enum Item {
 
     Plastic,
     Rubber,
+    HeavyOilResidue,
 }

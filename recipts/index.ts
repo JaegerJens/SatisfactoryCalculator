@@ -6,5 +6,6 @@ export { RotorRecipts } from './rotor';
 export { CopperIngotRecipts } from './copper-ingot';
 export { CopperSheetRecipts } from './copper-sheet';
 export { WireRecipts } from './wire';
+export { CableRecipts } from './cable';
 
 export { SteelIngotRecipts } from './steel-ingot';
