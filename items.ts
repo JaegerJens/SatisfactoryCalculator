@@ -6,6 +6,7 @@ export enum Item {
 
     Screw,
     ReinforcedIronPlate,
+    Rotor,
 
     Coal,
     CompactedCoal,
@@ -17,6 +18,7 @@ export enum Item {
 
     CopperOre,
     CopperIngot,
+    CopperSheet,
     Wire,
     Cable,
 

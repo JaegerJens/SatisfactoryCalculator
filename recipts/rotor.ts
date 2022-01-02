@@ -1,0 +1,53 @@
+import { Item } from '../items';
+import { Building } from '../buildings';
+import { Recipt } from './types';
+
+export const Rotor: Recipt = {
+    input: [{
+        item: Item.IronRod,
+        count: 5,
+    }, {
+        item: Item.Screw,
+        count: 25,
+    }],
+    output: [{
+        item: Item.Rotor,
+        count: 1,
+    }],
+    building: Building.Assembler,
+    time: 15,
+}
+
+export const CopperRotor: Recipt = {
+    input: [{
+        item: Item.CopperSheet,
+        count: 6,
+    }, {
+        item: Item.Screw,
+        count: 52,
+    }],
+    output: [{
+        item: Item.Rotor,
+        count: 3,
+    }],
+    building: Building.Assembler,
+    time: 16,
+}
+
+export const SteelRotor: Recipt = {
+    input: [{
+        item: Item.SteelPipe,
+        count: 2,
+    }, {
+        item: Item.Wire,
+        count: 30,
+    }],
+    output: [{
+        item: Item.Rotor,
+        count: 1,
+    }],
+    building: Building.Assembler,
+    time: 12,
+}
+
+export const RotorRecipts = [Rotor, CopperRotor, SteelRotor];
