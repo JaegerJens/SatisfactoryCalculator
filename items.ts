@@ -38,7 +38,10 @@ export enum Item {
 
     Water,
 
+    CrudeOil,
+    PolymerResin,
+    HeavyOilResidue,
     Plastic,
     Rubber,
-    HeavyOilResidue,
+    Fuel,
 }

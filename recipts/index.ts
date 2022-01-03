@@ -15,3 +15,5 @@ export { SteelPipe } from './steel-pipe';
 export { SteelBeam } from './steel-beam';
 
 export { ModularFrameRecipes } from './modular-frame';
+
+export { PlasticRecipes } from './plastic';
