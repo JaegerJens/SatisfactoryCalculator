@@ -19,3 +19,4 @@ export { ModularFrameRecipes } from './modular-frame';
 export { PlasticRecipes } from './plastic';
 export { RubberRecipes } from './rubber';
 export { FuelRecipes } from './fuel';
+export { PolymerResin, HeavyOilResiude } from './polymer-resin';
