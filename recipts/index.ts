@@ -9,5 +9,7 @@ export { WireRecipes } from './wire';
 export { CableRecipes } from './cable';
 
 export { SteelIngotRecipes } from './steel-ingot';
+export { SteelPipe } from './steel-pipe';
+export { SteelBeam } from './steel-beam';
 
 export { ModularFrameRecipes } from './modular-frame';
