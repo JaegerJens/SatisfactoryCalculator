@@ -6,7 +6,7 @@ export interface ItemCount {
     count: number,
 }
 
-export interface Recipt {
+export interface Recipe {
     input: ItemCount[],
     output: ItemCount[],
 
@@ -16,7 +16,7 @@ export interface Recipt {
     time: number,
 
     /**
-     * recipt done in building
+     * Recipe done in building
      */
     building: Building,
 }

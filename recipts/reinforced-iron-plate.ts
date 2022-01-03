@@ -1,8 +1,8 @@
 import { Item } from '../items';
 import { Building } from '../buildings';
-import { Recipt } from './types';
+import { Recipe } from './types';
 
-export const ReinforcedIronPlate: Recipt = {
+export const ReinforcedIronPlate: Recipe = {
     input: [{
         item: Item.IronPlate,
         count: 6,
@@ -18,7 +18,7 @@ export const ReinforcedIronPlate: Recipt = {
     time: 12,
 }
 
-export const AdheredIronPlate: Recipt = {
+export const AdheredIronPlate: Recipe = {
     input: [{
         item: Item.IronPlate,
         count: 3,
@@ -34,7 +34,7 @@ export const AdheredIronPlate: Recipt = {
     time: 16,
 }
 
-export const BoltedIronPlate: Recipt = {
+export const BoltedIronPlate: Recipe = {
     input: [{
         item: Item.IronPlate,
         count: 18,
@@ -50,7 +50,7 @@ export const BoltedIronPlate: Recipt = {
     time: 12,
 }
 
-export const StitchedIronPlate: Recipt = {
+export const StitchedIronPlate: Recipe = {
     input: [{
         item: Item.IronPlate,
         count: 10,
@@ -66,4 +66,4 @@ export const StitchedIronPlate: Recipt = {
     time: 32,
 }
 
-export const ReinforcedIronPlateRecipts = [ReinforcedIronPlate, AdheredIronPlate, BoltedIronPlate, StitchedIronPlate];
+export const ReinforcedIronPlateRecipes = [ReinforcedIronPlate, AdheredIronPlate, BoltedIronPlate, StitchedIronPlate];

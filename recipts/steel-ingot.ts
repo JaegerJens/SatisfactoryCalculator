@@ -1,8 +1,8 @@
 import { Item } from '../items';
 import { Building } from '../buildings';
-import { Recipt } from './types';
+import { Recipe } from './types';
 
-export const SteelIngot: Recipt = {
+export const SteelIngot: Recipe = {
     input: [{
         item: Item.IronOre,
         count: 3,
@@ -18,7 +18,7 @@ export const SteelIngot: Recipt = {
     time: 4,
 }
 
-export const CokeSteelIngout: Recipt = {
+export const CokeSteelIngout: Recipe = {
     input: [{
         item: Item.IronOre,
         count: 15,
@@ -34,7 +34,7 @@ export const CokeSteelIngout: Recipt = {
     time: 12,
 }
 
-export const CompactedSteelIngot: Recipt = {
+export const CompactedSteelIngot: Recipe = {
     input: [{
         item: Item.IronOre,
         count: 6,
@@ -50,7 +50,7 @@ export const CompactedSteelIngot: Recipt = {
     time: 16,
 }
 
-export const SolidSteelIngot: Recipt = {
+export const SolidSteelIngot: Recipe = {
     input: [{
         item: Item.IronIngot,
         count: 2,
@@ -66,4 +66,4 @@ export const SolidSteelIngot: Recipt = {
     time: 3,
 }
 
-export const SteelIngotRecipts = [SteelIngot, CokeSteelIngout, CompactedSteelIngot, SolidSteelIngot];
+export const SteelIngotRecipes = [SteelIngot, CokeSteelIngout, CompactedSteelIngot, SolidSteelIngot];

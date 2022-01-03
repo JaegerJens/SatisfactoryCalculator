@@ -8,6 +8,10 @@ export enum Item {
     ReinforcedIronPlate,
     Rotor,
 
+    ModularFrame,
+    HeavyModularFrame,
+    FusedModularFrame,
+
     Coal,
     CompactedCoal,
     PetroleumCoke,

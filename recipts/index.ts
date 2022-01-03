@@ -1,11 +1,13 @@
-export { IronIngotRecipts } from './iron-ingot';
-export { IronPlateRecipts } from './iron-plate';
-export { ReinforcedIronPlateRecipts } from './reinforced-iron-plate';
-export { RotorRecipts } from './rotor';
+export { IronIngotRecipes } from './iron-ingot';
+export { IronPlateRecipes } from './iron-plate';
+export { ReinforcedIronPlateRecipes } from './reinforced-iron-plate';
+export { RotorRecipes } from './rotor';
 
-export { CopperIngotRecipts } from './copper-ingot';
-export { CopperSheetRecipts } from './copper-sheet';
-export { WireRecipts } from './wire';
-export { CableRecipts } from './cable';
+export { CopperIngotRecipes } from './copper-ingot';
+export { CopperSheetRecipes } from './copper-sheet';
+export { WireRecipes } from './wire';
+export { CableRecipes } from './cable';
 
-export { SteelIngotRecipts } from './steel-ingot';
+export { SteelIngotRecipes } from './steel-ingot';
+
+export { ModularFrameRecipes } from './modular-frame';

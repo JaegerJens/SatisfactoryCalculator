@@ -1,8 +1,8 @@
 import { Item } from '../items';
 import { Building } from '../buildings';
-import { Recipt } from './types';
+import { Recipe } from './types';
 
-export const Cable: Recipt = {
+export const Cable: Recipe = {
     input: [{
         item: Item.Wire,
         count: 2,
@@ -15,7 +15,7 @@ export const Cable: Recipt = {
     time: 2,
 }
 
-export const CoatedCable: Recipt = {
+export const CoatedCable: Recipe = {
     input: [{
         item: Item.Wire,
         count: 5,
@@ -31,7 +31,7 @@ export const CoatedCable: Recipt = {
     time: 8,
 }
 
-export const InsulatedCable: Recipt = {
+export const InsulatedCable: Recipe = {
     input: [{
         item: Item.Wire,
         count: 9,
@@ -47,7 +47,7 @@ export const InsulatedCable: Recipt = {
     time: 12,
 }
 
-export const QuickwireCable: Recipt = {
+export const QuickwireCable: Recipe = {
     input: [{
         item: Item.Quickwire,
         count: 3,
@@ -63,4 +63,4 @@ export const QuickwireCable: Recipt = {
     time: 24,
 }
 
-export const CableRecipts = [Cable, CoatedCable, InsulatedCable, QuickwireCable];
+export const CableRecipes = [Cable, CoatedCable, InsulatedCable, QuickwireCable];

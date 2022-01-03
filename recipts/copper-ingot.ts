@@ -1,8 +1,8 @@
 import { Item } from '../items';
 import { Building } from '../buildings';
-import { Recipt } from './types';
+import { Recipe } from './types';
 
-export const CopperIngot: Recipt = {
+export const CopperIngot: Recipe = {
     input: [{
         item: Item.CopperOre,
         count: 1,
@@ -15,7 +15,7 @@ export const CopperIngot: Recipt = {
     time: 2,
 }
 
-export const CopperAlloyIngot: Recipt = {
+export const CopperAlloyIngot: Recipe = {
     input: [{
         item: Item.CopperOre,
         count: 10,
@@ -31,7 +31,7 @@ export const CopperAlloyIngot: Recipt = {
     time: 12,
 }
 
-export const PureCopperIngot: Recipt = {
+export const PureCopperIngot: Recipe = {
     input: [{
         item: Item.CopperOre,
         count: 6,
@@ -47,4 +47,4 @@ export const PureCopperIngot: Recipt = {
     time: 24,
 }
 
-export const CopperIngotRecipts = [CopperIngot, CopperAlloyIngot, PureCopperIngot];
+export const CopperIngotRecipes = [CopperIngot, CopperAlloyIngot, PureCopperIngot];
