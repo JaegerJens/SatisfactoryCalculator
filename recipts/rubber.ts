@@ -2,52 +2,52 @@ import { Item } from '../items';
 import { Building } from '../buildings';
 import { Recipe } from './types';
 
-export const Plastic: Recipe = {
+export const Rubber: Recipe = {
     input: [{
         item: Item.CrudeOil,
         count: 3,
     }],
     output: [{
-        item: Item.Plastic,
+        item: Item.Rubber,
         count: 2,
     }, {
         item: Item.HeavyOilResidue,
-        count: 1,
+        count: 2,
     }],
     building: Building.Refinery,
     time: 6,
 }
 
-export const ResidualPlastic: Recipe = {
+export const ResidualRubber: Recipe = {
     input: [{
         item: Item.PolymerResin,
-        count: 6,
+        count: 4,
     }, {
         item: Item.Water,
-        count: 2,
+        count: 4,
     }],
     output: [{
-        item: Item.Plastic,
+        item: Item.Rubber,
         count: 2,
     }],
     building: Building.Refinery,
     time: 6,
 }
 
-export const RecycledPlastic: Recipe = {
+export const RecycledRubber: Recipe = {
     input: [{
-        item: Item.Rubber,
+        item: Item.Plastic,
         count: 6,
     }, {
         item: Item.Fuel,
         count: 6,
     }],
     output: [{
-        item: Item.Plastic,
+        item: Item.Rubber,
         count: 12,
     }],
     building: Building.Refinery,
     time: 12,
 }
 
-export const PlasticRecipes = [Plastic, ResidualPlastic, RecycledPlastic];
+export const RubberRecipes = [Rubber, ResidualRubber, RecycledRubber];
