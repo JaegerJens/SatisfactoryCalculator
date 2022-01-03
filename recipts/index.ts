@@ -3,6 +3,8 @@ export { IronPlateRecipes } from './iron-plate';
 export { ReinforcedIronPlateRecipes } from './reinforced-iron-plate';
 export { RotorRecipes } from './rotor';
 
+export { ConcreteRecipes } from './concrete';
+
 export { CopperIngotRecipes } from './copper-ingot';
 export { CopperSheetRecipes } from './copper-sheet';
 export { WireRecipes } from './wire';

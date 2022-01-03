@@ -4,6 +4,12 @@ export enum Item {
     IronPlate,
     IronRod,
 
+    Limestone,
+    Concrete,
+
+    RawQuartz,
+    Silica,
+
     Screw,
     ReinforcedIronPlate,
     Rotor,
