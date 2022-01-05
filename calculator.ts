@@ -101,8 +101,13 @@ function calcMissingInputs(productions: Production[], time: number): Throughput[
 export function planFactory(target: Production, recipes: Recipe[]): Production[] {
     const factory = [target];
 
+    // items that have no known recipes (e.g. ore from miners)
+    const missingItemRecipes: Item[] = [];
+    const isMissingRecipe = (item: Item): boolean => missingItemRecipes.indexOf(item) === -1;
+    
     // find matching recipe for all missing inputs
-    const missingInputs = calcMissingInputs(factory, ThroughputTime);
+    const missingInputs = calcMissingInputs(factory, ThroughputTime)
+        .filter(missing => isMissingRecipe(missing.item));
     missingInputs.forEach(targetProduction => {
         let wantedRecipeOutputItem: ItemCount | undefined;
         const recipe = recipes.find(r => {
@@ -111,6 +116,7 @@ export function planFactory(target: Production, recipes: Recipe[]): Production[]
         });
         if (!recipe || !wantedRecipeOutputItem) {
             console.log(`No recipe for ${formatItem(targetProduction.item)} found`);
+            missingItemRecipes.push(targetProduction.item);
             return
         }
 
