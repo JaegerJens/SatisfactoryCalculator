@@ -18,7 +18,7 @@ export const PolymerResin: Recipe = {
     time: 6,
 }
 
-export const HeavyOilResiude: Recipe = {
+export const HeavyOilResidue: Recipe = {
     input: [{
         item: Item.CrudeOil,
         count: 3,

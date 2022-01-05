@@ -1,22 +1,46 @@
-export { IronIngotRecipes } from './iron-ingot.ts';
-export { IronPlateRecipes } from './iron-plate.ts';
-export { ReinforcedIronPlateRecipes } from './reinforced-iron-plate.ts';
-export { RotorRecipes } from './rotor.ts';
+import { IronIngotRecipes } from './iron-ingot.ts';
+import { IronPlateRecipes } from './iron-plate.ts';
+import { ReinforcedIronPlateRecipes } from './reinforced-iron-plate.ts';
+import { RotorRecipes } from './rotor.ts';
 
-export { ConcreteRecipes } from './concrete.ts';
+import { ConcreteRecipes } from './concrete.ts';
 
-export { CopperIngotRecipes } from './copper-ingot.ts';
-export { CopperSheetRecipes } from './copper-sheet.ts';
-export { WireRecipes } from './wire.ts';
-export { CableRecipes } from './cable.ts';
+import { CopperIngotRecipes } from './copper-ingot.ts';
+import { CopperSheetRecipes } from './copper-sheet.ts';
+import { WireRecipes } from './wire.ts';
+import { CableRecipes } from './cable.ts';
 
-export { SteelIngotRecipes } from './steel-ingot.ts';
-export { SteelPipe } from './steel-pipe.ts';
-export { SteelBeam } from './steel-beam.ts';
+import { SteelIngotRecipes } from './steel-ingot.ts';
+import { SteelPipe } from './steel-pipe.ts';
+import { SteelBeam } from './steel-beam.ts';
 
-export { ModularFrameRecipes } from './modular-frame.ts';
+import { ModularFrameRecipes } from './modular-frame.ts';
 
-export { PlasticRecipes } from './plastic.ts';
-export { RubberRecipes } from './rubber.ts';
-export { FuelRecipes } from './fuel.ts';
-export { PolymerResin, HeavyOilResiude } from './polymer-resin.ts';
+import { PlasticRecipes } from './plastic.ts';
+import { RubberRecipes } from './rubber.ts';
+import { FuelRecipes } from './fuel.ts';
+import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
+
+export const book = {
+    IronIngotRecipes,
+    IronPlateRecipes,
+    ReinforcedIronPlateRecipes,
+    RotorRecipes,
+    ConcreteRecipes,
+    CopperIngotRecipes,
+    CopperSheetRecipes,
+    WireRecipes,
+    CableRecipes,
+    SteelIngotRecipes,
+    SteelPipeRecipes: [SteelPipe],
+    SteelBeamRecipes: [SteelBeam],
+    ModularFrameRecipes,
+    PlasticRecipes,
+    RubberRecipes,
+    FuelRecipes,
+    PolymerResinRecipes: [PolymerResin],
+    HeavyOilResidueRecipes: [HeavyOilResidue],
+}
+
+export const basicRecipes = Object.values(book).map(recipes => recipes[0]);
+export const allRecipes = Object.values(book);
