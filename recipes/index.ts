@@ -1,5 +1,7 @@
 import { IronIngotRecipes } from './iron-ingot.ts';
 import { IronPlateRecipes } from './iron-plate.ts';
+import { IronRodRecipes } from './iron-rod.ts';
+import { ScrewRecipes } from './screw.ts';
 import { ReinforcedIronPlateRecipes } from './reinforced-iron-plate.ts';
 import { RotorRecipes } from './rotor.ts';
 
@@ -24,6 +26,8 @@ import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
 export const book = {
     IronIngotRecipes,
     IronPlateRecipes,
+    IronRodRecipes,
+    ScrewRecipes,
     ReinforcedIronPlateRecipes,
     RotorRecipes,
     ConcreteRecipes,
