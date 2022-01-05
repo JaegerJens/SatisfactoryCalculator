@@ -1,22 +1,22 @@
-export { IronIngotRecipes } from './iron-ingot';
-export { IronPlateRecipes } from './iron-plate';
-export { ReinforcedIronPlateRecipes } from './reinforced-iron-plate';
-export { RotorRecipes } from './rotor';
+export { IronIngotRecipes } from './iron-ingot.ts';
+export { IronPlateRecipes } from './iron-plate.ts';
+export { ReinforcedIronPlateRecipes } from './reinforced-iron-plate.ts';
+export { RotorRecipes } from './rotor.ts';
 
-export { ConcreteRecipes } from './concrete';
+export { ConcreteRecipes } from './concrete.ts';
 
-export { CopperIngotRecipes } from './copper-ingot';
-export { CopperSheetRecipes } from './copper-sheet';
-export { WireRecipes } from './wire';
-export { CableRecipes } from './cable';
+export { CopperIngotRecipes } from './copper-ingot.ts';
+export { CopperSheetRecipes } from './copper-sheet.ts';
+export { WireRecipes } from './wire.ts';
+export { CableRecipes } from './cable.ts';
 
-export { SteelIngotRecipes } from './steel-ingot';
-export { SteelPipe } from './steel-pipe';
-export { SteelBeam } from './steel-beam';
+export { SteelIngotRecipes } from './steel-ingot.ts';
+export { SteelPipe } from './steel-pipe.ts';
+export { SteelBeam } from './steel-beam.ts';
 
-export { ModularFrameRecipes } from './modular-frame';
+export { ModularFrameRecipes } from './modular-frame.ts';
 
-export { PlasticRecipes } from './plastic';
-export { RubberRecipes } from './rubber';
-export { FuelRecipes } from './fuel';
-export { PolymerResin, HeavyOilResiude } from './polymer-resin';
+export { PlasticRecipes } from './plastic.ts';
+export { RubberRecipes } from './rubber.ts';
+export { FuelRecipes } from './fuel.ts';
+export { PolymerResin, HeavyOilResiude } from './polymer-resin.ts';

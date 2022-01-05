@@ -1,5 +1,5 @@
-import { Item } from '../items';
-import { Building } from '../buildings';
+import { Item } from '../items.ts';
+import { Building } from '../buildings.ts';
 
 export interface ItemCount {
     item: Item,

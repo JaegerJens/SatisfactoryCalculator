@@ -1,5 +1,5 @@
-import { Item } from './items';
-import { ItemCount, Recipe } from './recipes/types';
+import { Item } from './items.ts';
+import { ItemCount, Recipe } from './recipes/types.ts';
 
 const ThroughputTime = 60;
 
@@ -49,8 +49,8 @@ function calcMissingInputs(productions: Production[], time: number): Throughput[
         // add all outputs
         const outputs = prod.output(time);
         outputs.forEach(o => {
-            if (current.has(o.item)) {
-                const e = current.get(o.item);
+            const e = current.get(o.item);
+            if (e) {
                 e.output += o.count;
             } else {
                 current.set(o.item, {
@@ -64,8 +64,8 @@ function calcMissingInputs(productions: Production[], time: number): Throughput[
         // add all inputs
         const inputs = prod.input(time);
         inputs.forEach(i => {
-            if (current.has(i.item)) {
-                const e = current.get(i.item);
+            const e = current.get(i.item);
+            if (e) {
                 e.input += i.count;
             } else {
                 current.set(i.item, {
@@ -88,7 +88,7 @@ function calcMissingInputs(productions: Production[], time: number): Throughput[
                 time: time,
             })
         }
-    };
+    }
     return missingInputs;
 }
 
@@ -98,14 +98,17 @@ export function planFactory(target: Production, recipes: Recipe[]): Production[]
     // find matching recipe for all missing inputs
     const missingInputs = calcMissingInputs(factory, ThroughputTime);
     missingInputs.forEach(targetProduction => {
-        const recipe = recipes.find(r => r.output.find(o => o.item === targetProduction.item));
-        if (!recipe) {
+        let wantedRecipeOutputItem: ItemCount | undefined;
+        const recipe = recipes.find(r => {
+            wantedRecipeOutputItem = r.output.find(o => o.item === targetProduction.item)
+            return wantedRecipeOutputItem;
+        });
+        if (!recipe || !wantedRecipeOutputItem) {
             console.log(`No recipe for ${targetProduction.item} found`);
             return
         }
 
         // calculate required building counts to match recipe output with expected input
-        const wantedRecipeOutputItem = recipe.output.find(o => o.item === targetProduction.item);
         const recipeThrouphput = wantedRecipeOutputItem.count / recipe.time;
         const buildingCount = (targetProduction.count / targetProduction.time) / recipeThrouphput;
         const production = new Production(recipe, buildingCount);

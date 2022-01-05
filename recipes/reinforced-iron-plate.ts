@@ -1,6 +1,6 @@
-import { Item } from '../items';
-import { Building } from '../buildings';
-import { Recipe } from './types';
+import { Item } from '../items.ts';
+import { Building } from '../buildings.ts';
+import { Recipe } from './types.ts';
 
 export const ReinforcedIronPlate: Recipe = {
     input: [{
