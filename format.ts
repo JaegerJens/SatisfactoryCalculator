@@ -3,6 +3,11 @@ import { Building } from "./buildings.ts";
 import { ItemCount, Recipe } from "./recipes/types.ts";
 import { Throughput } from "./calculator.ts";
 
+export function formatNumber(number: number): string {
+    const rounding = 100;
+    return `${Math.round(rounding * number)/rounding}`;
+}
+
 export function formatItem(item: Item): string {
     return Item[item];
 }
@@ -17,7 +22,7 @@ export function formatItemCount(itemCount: ItemCount): string {
 
 export function formatThroughput(throughput: Throughput): string {
     const itemsPerMinute = throughput.count * 60 / throughput.time;
-    return `${itemsPerMinute}/min ${formatItem(throughput.item)}`;
+    return `${formatNumber(itemsPerMinute)}/min ${formatItem(throughput.item)}`;
 }
 
 export function formatRecipe(recipe: Recipe): string {

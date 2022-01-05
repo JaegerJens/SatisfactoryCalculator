@@ -1,4 +1,4 @@
-import { formatBuilding, formatItem, formatThroughput } from "./format.ts";
+import { formatBuilding, formatItem, formatNumber, formatThroughput } from "./format.ts";
 import { Item } from './items.ts';
 import { ItemCount, Recipe } from './recipes/types.ts';
 
@@ -43,7 +43,7 @@ export class Production {
 
     toString(): string {
         const outputs = this.output(ThroughputTime).map(formatThroughput)
-        return `Produce [${outputs.join(', ')}] in ${this.count} ${formatBuilding(this.recipe.building)}`;
+        return `Produce [${outputs.join(', ')}] in ${formatNumber(this.count)} ${formatBuilding(this.recipe.building)}`;
     }
 }
 
@@ -104,11 +104,16 @@ export function planFactory(target: Production, recipes: Recipe[]): Production[]
     // items that have no known recipes (e.g. ore from miners)
     const missingItemRecipes: Item[] = [];
     const isMissingRecipe = (item: Item): boolean => missingItemRecipes.indexOf(item) === -1;
+    let resolved = false;
     
-    // find matching recipe for all missing inputs
-    const missingInputs = calcMissingInputs(factory, ThroughputTime)
-        .filter(missing => isMissingRecipe(missing.item));
-    missingInputs.forEach(targetProduction => {
+    while(!resolved) {
+        // find matching recipe for all missing inputs
+        const missingInputs = calcMissingInputs(factory, ThroughputTime)
+            .filter(missing => isMissingRecipe(missing.item));
+        if (missingInputs.length === 0) {
+            resolved = true;
+        }
+        missingInputs.forEach(targetProduction => {
         let wantedRecipeOutputItem: ItemCount | undefined;
         const recipe = recipes.find(r => {
             wantedRecipeOutputItem = r.output.find(o => o.item === targetProduction.item)
@@ -125,7 +130,8 @@ export function planFactory(target: Production, recipes: Recipe[]): Production[]
         const buildingCount = (targetProduction.count / targetProduction.time) / recipeThrouphput;
         const production = new Production(recipe, buildingCount);
         factory.push(production);
-    });
+        });
+    }
 
     return factory;
 }

@@ -1,7 +1,7 @@
 import { planFactory, Production } from "./calculator.ts";
 import { book, basicRecipes } from "./recipes/index.ts";
 
-const target = new Production(book.IronPlateRecipes[0], 4);
+const target = new Production(book.ModularFrameRecipes[0], 4);
 
 const factory = planFactory(target, basicRecipes);
 
