@@ -1,3 +1,4 @@
+import { formatBuilding, formatItem, formatThroughput } from "./format.ts";
 import { Item } from './items.ts';
 import { ItemCount, Recipe } from './recipes/types.ts';
 
@@ -38,6 +39,11 @@ export class Production {
             time: time,
             count: element.count * this.count * scaling,
         }))
+    }
+
+    toString(): string {
+        const outputs = this.output(ThroughputTime).map(formatThroughput)
+        return `Produce [${outputs.join(', ')}] in ${this.count} ${formatBuilding(this.recipe.building)}`;
     }
 }
 
@@ -104,7 +110,7 @@ export function planFactory(target: Production, recipes: Recipe[]): Production[]
             return wantedRecipeOutputItem;
         });
         if (!recipe || !wantedRecipeOutputItem) {
-            console.log(`No recipe for ${targetProduction.item} found`);
+            console.log(`No recipe for ${formatItem(targetProduction.item)} found`);
             return
         }
 

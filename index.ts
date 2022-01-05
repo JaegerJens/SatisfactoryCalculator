@@ -6,4 +6,4 @@ const target = new Production(IronPlateRecipes[0], 4);
 
 const factory = planFactory(target, recipes);
 
-console.log(factory);
+console.log(factory.map(prod => prod.toString()).join('\n'));
