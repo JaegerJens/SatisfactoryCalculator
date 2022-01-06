@@ -1,3 +1,6 @@
+import { SelectRecipe } from "../types.ts";
+import { selectItem } from "../select-item.ts";
+
 import { IronIngotRecipes } from './iron-ingot.ts';
 import { IronPlateRecipes } from './iron-plate.ts';
 import { IronRodRecipes } from './iron-rod.ts';
@@ -22,6 +25,7 @@ import { PlasticRecipes } from './plastic.ts';
 import { RubberRecipes } from './rubber.ts';
 import { FuelRecipes } from './fuel.ts';
 import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
+import { Item } from "../items.ts";
 
 export const book = {
     IronIngotRecipes,
@@ -46,5 +50,24 @@ export const book = {
     HeavyOilResidueRecipes: [HeavyOilResidue],
 }
 
-export const basicRecipes = Object.values(book).map(recipes => recipes[0]);
-export const allRecipes = Object.values(book);
+/**
+ * Use first matching recipe of all recipes
+ */
+export const useAnyRecipe: SelectRecipe = item => Object.values(book)
+    .flatMap(recipe => recipe)
+    .find(recipe => selectItem(recipe.output, item));
+
+/**
+ * Use only basic recipes (not recipes from hard drives)
+ */
+export const useBasicRecipes: SelectRecipe = item => Object.values(book)
+    .map(recipes => recipes[0])
+    .find(recipe => selectItem(recipe.output, item))
+
+/**
+ * Select Recipes without using Screws
+ */
+export const avoidScrews: SelectRecipe = item => Object.values(book)
+    .flatMap(recipe => recipe)
+    .filter(recipe => selectItem(recipe.output, item))
+    .find(recipe => !selectItem(recipe.output, Item.Screw));

@@ -1,7 +1,7 @@
 import { Item } from "./items.ts";
 import { Building } from "./buildings.ts";
-import { ItemCount, Recipe } from "./recipes/types.ts";
-import { Throughput } from "./calculator.ts";
+import { ItemCount, Recipe } from "./types.ts";
+import { Throughput } from "./production.ts";
 
 export function formatNumber(number: number): string {
     const rounding = 100;

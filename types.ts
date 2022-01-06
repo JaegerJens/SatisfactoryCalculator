@@ -1,5 +1,5 @@
-import { Item } from '../items.ts';
-import { Building } from '../buildings.ts';
+import { Item } from './items.ts';
+import { Building } from './buildings.ts';
 
 export interface ItemCount {
     item: Item,
@@ -20,3 +20,5 @@ export interface Recipe {
      */
     building: Building,
 }
+
+export type SelectRecipe = (output: Item) => Recipe | undefined;

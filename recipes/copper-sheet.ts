@@ -1,6 +1,6 @@
 import { Item } from '../items.ts';
 import { Building } from '../buildings.ts';
-import { Recipe } from './types.ts';
+import { Recipe } from '../types.ts';
 
 export const CopperSheet: Recipe = {
     input: [{
