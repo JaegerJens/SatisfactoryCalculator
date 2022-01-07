@@ -61,8 +61,8 @@ function calcMissingInputs(productions: Production[], time: number): Throughput[
   return missingInputs;
 }
 
-export function planFactory(target: Production, selectRecipe: SelectRecipe): Production[] {
-  const factory = [target];
+export function planFactory(targets: Production[], selectRecipe: SelectRecipe): Production[] {
+  const factory = [...targets];
 
   // items that have no known recipes (e.g. ore from miners)
   const missingItemRecipes: Item[] = [];
