@@ -1,4 +1,4 @@
-import { formatItem } from "./format.ts";
+import { formatThroughput } from "./format.ts";
 import { Item } from "./items.ts";
 import { Production, Throughput, ThroughputTime } from "./production.ts";
 import { selectItem } from "./select-item.ts";
@@ -80,7 +80,7 @@ export function planFactory(target: Production, selectRecipe: SelectRecipe): Pro
     missingInputs.forEach((targetProduction) => {
       const recipe = selectRecipe(targetProduction.item);
       if (!recipe) {
-        console.log(`No recipe for ${formatItem(targetProduction.item)} found`);
+        console.log(`No recipe for ${formatThroughput(targetProduction)} found`);
         missingItemRecipes.push(targetProduction.item);
         return;
       }
