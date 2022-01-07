@@ -1,5 +1,7 @@
 import { SelectRecipe } from "../types.ts";
 import { selectItem } from "../select-item.ts";
+import { Item } from "../items.ts";
+export { source, Purity } from "./item-source.ts";
 
 import { IronIngotRecipes } from './iron-ingot.ts';
 import { IronPlateRecipes } from './iron-plate.ts';
@@ -25,7 +27,6 @@ import { PlasticRecipes } from './plastic.ts';
 import { RubberRecipes } from './rubber.ts';
 import { FuelRecipes } from './fuel.ts';
 import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
-import { Item } from "../items.ts";
 
 export const book = {
     IronIngotRecipes,
