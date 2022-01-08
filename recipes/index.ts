@@ -1,7 +1,8 @@
 import { SelectRecipe } from "../types.ts";
 import { selectItem } from "../select-item.ts";
 import { Item } from "../items.ts";
-export { source, Purity } from "./item-source.ts";
+import { source, Purity } from "./item-source.ts";
+import { Building } from "../buildings.ts";
 
 import { IronIngotRecipes } from './iron-ingot.ts';
 import { IronPlateRecipes } from './iron-plate.ts';
@@ -64,24 +65,42 @@ export const book = {
     PlutoniumFuelRodRecipes,
 }
 
+export { source, Purity };
+
+export const safeRecipe: ((goodRecipes: SelectRecipe) => SelectRecipe) = (goodRecipes) => item => {
+    switch(item) {
+        case Item.Water: return source(item, Building.WaterExtractor, Purity.Impure);
+        case Item.SulfuricAcid:
+        case Item.NitricAcid:
+        case Item.UraniumWaste:
+        case Item.PlutoniumWaste:
+            return undefined;
+        default:
+            return goodRecipes(item);
+    }
+}
+
 /**
  * Use first matching recipe of all recipes
  */
-export const useAnyRecipe: SelectRecipe = item => Object.values(book)
-    .flatMap(recipe => recipe)
-    .find(recipe => selectItem(recipe.output, item));
+export const useAnyRecipe: SelectRecipe = safeRecipe(item =>
+    Object.values(book)
+        .flatMap(recipe => recipe)
+        .find(recipe => selectItem(recipe.output, item)));
 
 /**
  * Use only basic recipes (not recipes from hard drives)
  */
-export const useBasicRecipes: SelectRecipe = item => Object.values(book)
-    .map(recipes => recipes[0])
-    .find(recipe => selectItem(recipe.output, item))
+export const useBasicRecipes: SelectRecipe = safeRecipe(item =>
+    Object.values(book)
+        .map(recipes => recipes[0])
+        .find(recipe => selectItem(recipe.output, item)));
 
 /**
  * Select Recipes without using Screws
  */
-export const avoidScrews: SelectRecipe = item => Object.values(book)
-    .flatMap(recipe => recipe)
-    .filter(recipe => selectItem(recipe.output, item))
-    .find(recipe => !selectItem(recipe.output, Item.Screw));
+export const avoidScrews: SelectRecipe = safeRecipe(item =>
+    Object.values(book)
+        .flatMap(recipe => recipe)
+        .filter(recipe => selectItem(recipe.output, item))
+        .find(recipe => !selectItem(recipe.output, Item.Screw)));
