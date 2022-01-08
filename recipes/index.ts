@@ -21,6 +21,7 @@ import { CableRecipes } from './cable.ts';
 import { SteelIngotRecipes } from './steel-ingot.ts';
 import { SteelPipe } from './steel-pipe.ts';
 import { SteelBeam } from './steel-beam.ts';
+import { EncasedIndustrialBeamRecipes } from './encased-industrial-beam.ts';
 
 import { ModularFrameRecipes } from './modular-frame.ts';
 
@@ -29,6 +30,8 @@ import { RubberRecipes } from './rubber.ts';
 import { FuelRecipes } from './fuel.ts';
 import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
 
+import { NitricAcid, SulfuricAcid } from "./acid.ts";
+import { ElectromagneticControlRodRecipes } from "./electromagnetic-control-rod.ts";
 import { EncasedUraniumCellRecipes } from './encased-uranium-cell.ts';
 import { UraniumFuelRodRecipes } from './uranium-fuel-rod.ts';
 import { NonFissableUraniumRecipes } from './non-fissable-uranium.ts';
@@ -51,12 +54,16 @@ export const book = {
     SteelIngotRecipes,
     SteelPipeRecipes: [SteelPipe],
     SteelBeamRecipes: [SteelBeam],
+    EncasedIndustrialBeamRecipes,
     ModularFrameRecipes,
     PlasticRecipes,
     RubberRecipes,
     FuelRecipes,
     PolymerResinRecipes: [PolymerResin],
     HeavyOilResidueRecipes: [HeavyOilResidue],
+    ElectromagneticControlRodRecipes: ElectromagneticControlRodRecipes,
+    SulfuricAcidRecipes: [SulfuricAcid],
+    NitricAcidRecipes: [NitricAcid],
     EncasedUraniumCellRecipes,
     UraniumFuelRodRecipes,
     NonFissableUraniumRecipes,
@@ -70,8 +77,9 @@ export { source, Purity };
 export const safeRecipe: ((goodRecipes: SelectRecipe) => SelectRecipe) = (goodRecipes) => item => {
     switch(item) {
         case Item.Water: return source(item, Building.WaterExtractor, Purity.Impure);
-        case Item.SulfuricAcid:
-        case Item.NitricAcid:
+        case Item.SulfuricAcid: return SulfuricAcid;
+        case Item.NitricAcid: return NitricAcid;
+        case Item.NitrogenGas: 
         case Item.UraniumWaste:
         case Item.PlutoniumWaste:
             return undefined;

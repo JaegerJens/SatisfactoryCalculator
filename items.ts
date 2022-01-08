@@ -31,6 +31,7 @@ export enum Item {
     SteelBeam,
     SteelPipe,
     EncasedIndustrialBeam,
+    Stator,
 
     CopperOre,
     CopperIngot,
@@ -47,12 +48,17 @@ export enum Item {
     Rubber,
     Fuel,
 
+    CircuitBoard,
+    AILimiter,
+    HighSpeedConnector,
+
     AluminumCasing,
     HeatSink,
 
     CrystalOscilator,
     Beacon,
 
+    NitrogenGas,
     SulfuricAcid,
     NitricAcid,
     Uranium,
@@ -73,7 +79,9 @@ export enum Item {
 export function isSinkable(item: Item): boolean {
     switch(item) {
         case Item.Water:
+        case Item.CrudeOil:
         case Item.SulfuricAcid:
+        case Item.NitrogenGas:
         case Item.NitricAcid:
         case Item.UraniumWaste:
         case Item.PlutoniumWaste:
