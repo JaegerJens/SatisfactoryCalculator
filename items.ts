@@ -19,6 +19,7 @@ export enum Item {
     FusedModularFrame,
 
     Coal,
+    Sulfur,
     CompactedCoal,
     PetroleumCoke,
 
@@ -29,6 +30,7 @@ export enum Item {
     SteelIngot,
     SteelBeam,
     SteelPipe,
+    EncasedIndustrialBeam,
 
     CopperOre,
     CopperIngot,
@@ -44,4 +46,26 @@ export enum Item {
     Plastic,
     Rubber,
     Fuel,
+
+    AluminumCasing,
+    HeatSink,
+
+    CrystalOscilator,
+    Beacon,
+
+    SulfuricAcid,
+    NitricAcid,
+    Uranium,
+    ElectromagneticControlRod,
+
+    EncasedUraniumCell,
+    UraniumFuelRod,
+    UraniumWaste,
+    NonFissableUranium,
+
+    PressureConversionCube,
+    EncasedPlutoniumCell,
+    PlutoniumPellet,
+    PlutoniumFuelRod,
+    PlutoniumWaste,
 }

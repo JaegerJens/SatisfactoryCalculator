@@ -28,6 +28,13 @@ import { RubberRecipes } from './rubber.ts';
 import { FuelRecipes } from './fuel.ts';
 import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
 
+import { EncasedUraniumCellRecipes } from './encased-uranium-cell.ts';
+import { UraniumFuelRodRecipes } from './uranium-fuel-rod.ts';
+import { NonFissableUraniumRecipes } from './non-fissable-uranium.ts';
+import { PlutoniumPellet } from './plutonium-pellet.ts';
+import { EncasedPlutoniumCellRecipes } from './encased-plutonium-cell.ts';
+import { PlutoniumFuelRodRecipes } from './plutonium-fuel-rod.ts';
+
 export const book = {
     IronIngotRecipes,
     IronPlateRecipes,
@@ -49,6 +56,12 @@ export const book = {
     FuelRecipes,
     PolymerResinRecipes: [PolymerResin],
     HeavyOilResidueRecipes: [HeavyOilResidue],
+    EncasedUraniumCellRecipes,
+    UraniumFuelRodRecipes,
+    NonFissableUraniumRecipes,
+    PlutoniumPelletRecipes: [PlutoniumPellet],
+    EncasedPlutoniumCellRecipes,
+    PlutoniumFuelRodRecipes,
 }
 
 /**
