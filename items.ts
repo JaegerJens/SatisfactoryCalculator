@@ -69,3 +69,33 @@ export enum Item {
     PlutoniumFuelRod,
     PlutoniumWaste,
 }
+
+export function isSinkable(item: Item): boolean {
+    switch(item) {
+        case Item.Water:
+        case Item.SulfuricAcid:
+        case Item.NitricAcid:
+        case Item.UraniumWaste:
+        case Item.PlutoniumWaste:
+            return false;
+        default:
+            return true;
+    }
+}
+
+export function isRadioActive(item: Item): boolean {
+    switch(item) {
+        case Item.Uranium:
+        case Item.EncasedUraniumCell:
+        case Item.UraniumFuelRod:
+        case Item.UraniumWaste:
+        case Item.NonFissableUranium:
+        case Item.PlutoniumPellet:
+        case Item.EncasedPlutoniumCell:
+        case Item.PlutoniumFuelRod:
+        case Item.PlutoniumWaste:
+            return true;
+        default:
+            return false;
+    }
+}

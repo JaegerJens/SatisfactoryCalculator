@@ -1,4 +1,4 @@
-import { Item } from "./items.ts";
+import { isRadioActive, Item } from "./items.ts";
 import { Building } from "./buildings.ts";
 import { ItemCount, Recipe } from "./types.ts";
 import { Throughput } from "./production.ts";
@@ -9,7 +9,7 @@ export function formatNumber(number: number): string {
 }
 
 export function formatItem(item: Item): string {
-    return Item[item];
+    return isRadioActive(item) ? `${Item[item]}-RADIOACTIVE` : Item[item];
 }
 
 export function formatBuilding(building: Building): string {
