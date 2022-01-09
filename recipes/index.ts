@@ -10,6 +10,7 @@ import { IronRodRecipes } from './iron-rod.ts';
 import { ScrewRecipes } from './screw.ts';
 import { ReinforcedIronPlateRecipes } from './reinforced-iron-plate.ts';
 import { RotorRecipes } from './rotor.ts';
+import { StatorRecipes } from "./stator.ts";
 
 import { ConcreteRecipes } from './concrete.ts';
 
@@ -31,6 +32,9 @@ import { FuelRecipes } from './fuel.ts';
 import { PolymerResin, HeavyOilResidue } from './oil-intermediate.ts';
 
 import { NitricAcid, SulfuricAcid } from "./acid.ts";
+import { CateriumIngotRecipes } from "./caterium-ingot.ts";
+import { QuickwireRecipes } from "./quickwire.ts";
+import { AILimiter } from "./ai-limiter.ts";
 import { ElectromagneticControlRodRecipes } from "./electromagnetic-control-rod.ts";
 import { EncasedUraniumCellRecipes } from './encased-uranium-cell.ts';
 import { UraniumFuelRodRecipes } from './uranium-fuel-rod.ts';
@@ -46,6 +50,7 @@ export const book = {
     ScrewRecipes,
     ReinforcedIronPlateRecipes,
     RotorRecipes,
+    StatorRecipes,
     ConcreteRecipes,
     CopperIngotRecipes,
     CopperSheetRecipes,
@@ -61,6 +66,9 @@ export const book = {
     FuelRecipes,
     PolymerResinRecipes: [PolymerResin],
     HeavyOilResidueRecipes: [HeavyOilResidue],
+    CateriumIngotRecipes,
+    QuickwireRecipes,
+    AILimiterRecipes: [AILimiter],
     ElectromagneticControlRodRecipes: ElectromagneticControlRodRecipes,
     SulfuricAcidRecipes: [SulfuricAcid],
     NitricAcidRecipes: [NitricAcid],
