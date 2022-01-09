@@ -31,5 +31,4 @@ const plasticWithDilutedFuel: SelectRecipe = item => {
     }
 }
 
-const recycledPlasticFactory = planFactory([plastic], plasticWithDilutedFuel);
-console.log(recycledPlasticFactory.map(prod => prod.toString()).join('\n'));
+export const recycledPlasticFactory = planFactory([plastic], plasticWithDilutedFuel);

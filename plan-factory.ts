@@ -4,52 +4,55 @@ import { Production, Throughput, ThroughputTime } from "./production.ts";
 import { selectItem } from "./select-item.ts";
 import { SelectRecipe } from "./types.ts";
 
-interface InputOutput {
+export interface InputOutput {
   item: Item;
   input: number;
   output: number;
 }
 
-function calcMissingInputs(productions: Production[], time: number): Throughput[] {
-  const current = new Map<Item, InputOutput>();
+export function sumProductions(productions: Production[], time: number): InputOutput[] {
+  const result: InputOutput[] = [];
 
-  // add all inputs and outputs of all known productions
+  function addInput(item: Item, count: number) {
+    const entry = result.find(io => io.item === item);
+    if (entry) {
+      entry.input += count;
+    } else {
+      result.push({
+        item,
+        input: count,
+        output: 0,
+      });
+    }
+  }
+
+  function addOutput(item: Item, count: number) {
+    const entry = result.find(io => io.item === item);
+    if (entry) {
+      entry.output += count;
+    } else {
+      result.push({
+        item,
+        output: count,
+        input: 0,
+      });
+    }
+  }
+
   productions.forEach((prod) => {
-    // add all outputs
-    const outputs = prod.output(time);
-    outputs.forEach((o) => {
-      const e = current.get(o.item);
-      if (e) {
-        e.output += o.count;
-      } else {
-        current.set(o.item, {
-          item: o.item,
-          output: o.count,
-          input: 0,
-        });
-      }
-    });
-
-    // add all inputs
-    const inputs = prod.input(time);
-    inputs.forEach((i) => {
-      const e = current.get(i.item);
-      if (e) {
-        e.input += i.count;
-      } else {
-        current.set(i.item, {
-          item: i.item,
-          input: i.count,
-          output: 0,
-        });
-      }
-    });
+    prod.output(time).forEach(output => addOutput(output.item, output.count));
+    prod.input(time).forEach(input => addInput(input.item, input.count));
   });
+  return result;
+}
+
+function calcMissingInputs(productions: Production[], time: number): Throughput[] {
+  const balance = sumProductions(productions, time);
 
   // return list of missing inputs
   // and ignore overproductions
   const missingInputs: Throughput[] = [];
-  for (const itemState of current.values()) {
+  for (const itemState of balance) {
     if (itemState.input > itemState.output) {
       missingInputs.push({
         item: itemState.item,
