@@ -1,1 +1,1 @@
-import './factory/nuclear-power.ts';
+import './factory/diluted-fuel-recycled-plastic.ts';
