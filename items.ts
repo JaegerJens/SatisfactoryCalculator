@@ -52,6 +52,10 @@ export enum Item {
     AILimiter,
     HighSpeedConnector,
 
+    Bauxite,
+    AluminumScrap,
+    AluminumIngot,
+    AlcladAluminumSheet,
     AluminumCasing,
     HeatSink,
 
@@ -77,7 +81,7 @@ export enum Item {
 }
 
 export function isSinkable(item: Item): boolean {
-    switch(item) {
+    switch (item) {
         case Item.Water:
         case Item.CrudeOil:
         case Item.SulfuricAcid:
@@ -92,7 +96,7 @@ export function isSinkable(item: Item): boolean {
 }
 
 export function isRadioActive(item: Item): boolean {
-    switch(item) {
+    switch (item) {
         case Item.Uranium:
         case Item.EncasedUraniumCell:
         case Item.UraniumFuelRod:
@@ -102,6 +106,24 @@ export function isRadioActive(item: Item): boolean {
         case Item.EncasedPlutoniumCell:
         case Item.PlutoniumFuelRod:
         case Item.PlutoniumWaste:
+            return true;
+        default:
+            return false;
+    }
+}
+
+export function isSourceItem(item: Item): boolean {
+    switch (item) {
+        case Item.Water:
+        case Item.Limestone:
+        case Item.IronOre:
+        case Item.CopperOre:
+        case Item.CateriumOre:
+        case Item.Coal:
+        case Item.CrudeOil:
+        case Item.Bauxite:
+        case Item.NitrogenGas:
+        case Item.Uranium:
             return true;
         default:
             return false;

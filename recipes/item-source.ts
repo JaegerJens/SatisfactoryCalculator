@@ -1,6 +1,7 @@
 import { Item } from "../items.ts";
 import { Building } from "../buildings.ts";
 import { Recipe } from "../types.ts";
+import { formatItem } from "../format.ts";
 
 export enum Purity {
     Impure,
@@ -43,15 +44,21 @@ function buildingFactor(building: Building): number {
 
 export function source(item: Item, building: Building, purity: Purity): Recipe | undefined {
     switch (item) {
+        case Item.Limestone:
         case Item.IronOre:
         case Item.CopperOre:
         case Item.Coal:
+        case Item.CateriumOre:
+        case Item.Bauxite:
+        case Item.Uranium:
             return buildRecipe(item, 30 * purityFactor(purity) * buildingFactor(building), building);
         case Item.CrudeOil:
             return buildRecipe(item, 60 * purityFactor(purity), Building.OilExtractor);
         case Item.Water:
             return buildRecipe(item, 120, Building.WaterExtractor);
+        case Item.NitrogenGas:
+            return buildRecipe(item, 30 * purityFactor(purity), Building.ResourceWellExtractor);
         default:
-            return undefined;
+            throw new Error(`${formatItem(item)} can not be sourced}`);
     }
 }
