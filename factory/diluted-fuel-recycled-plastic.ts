@@ -9,7 +9,7 @@ import { RecycledPlastic } from "../recipes/plastic.ts";
 import { ResidualRubber } from "../recipes/rubber.ts";
 import { SelectRecipe } from "../types.ts";
 
-const plastic = new Production(RecycledPlastic, 2);
+const plastic = new Production(RecycledPlastic, 10);
 
 const plasticWithDilutedFuel: SelectRecipe = item => {
     switch (item) {
