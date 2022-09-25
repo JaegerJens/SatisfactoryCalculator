@@ -42,6 +42,11 @@ import { NonFissableUraniumRecipes } from './non-fissable-uranium.ts';
 import { PlutoniumPellet } from './plutonium-pellet.ts';
 import { EncasedPlutoniumCellRecipes } from './encased-plutonium-cell.ts';
 import { PlutoniumFuelRodRecipes } from './plutonium-fuel-rod.ts';
+import { BatteryRecipes } from "./battery.ts";
+import { AluminaSolutionRecipes } from "./alumina-solution.ts";
+import { AluminumCasingRecipes } from "./aluminum-casing.ts";
+import { AluminumIngotRecipes } from "./aluminum-ingot.ts";
+import { AluminumScrapRecipes } from "./aluminum-scrap.ts";
 
 export const book = {
     IronIngotRecipes,
@@ -71,7 +76,12 @@ export const book = {
     AILimiterRecipes: [AILimiter],
     ElectromagneticControlRodRecipes: ElectromagneticControlRodRecipes,
     SulfuricAcidRecipes: [SulfuricAcid],
+    AluminaSolutionRecipes,
+    AluminumScrapRecipes,
+    AluminumIngotRecipes,
+    AluminumCasingRecipes,
     NitricAcidRecipes: [NitricAcid],
+    BatteryRecipes,
     EncasedUraniumCellRecipes,
     UraniumFuelRodRecipes,
     NonFissableUraniumRecipes,

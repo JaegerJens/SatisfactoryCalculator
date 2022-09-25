@@ -50,6 +50,7 @@ export function source(item: Item, building: Building, purity: Purity): Recipe |
         case Item.Coal:
         case Item.CateriumOre:
         case Item.Bauxite:
+        case Item.Sulfur:
         case Item.Uranium:
             return buildRecipe(item, 30 * purityFactor(purity) * buildingFactor(building), building);
         case Item.CrudeOil:

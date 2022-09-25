@@ -1,12 +1,12 @@
-import { recycledPlasticFactory } from './factory/diluted-fuel-recycled-plastic.ts';
+import { batteryFactory } from "./factory/battery-factory.ts";
 import { formatItem, formatNumber } from "./format.ts";
 import { sumProductions } from "./plan-factory.ts";
 
 console.log('## Factory');
-recycledPlasticFactory.forEach(prod => console.log(prod.toString()));
+batteryFactory.forEach(prod => console.log(prod.toString()));
 
 console.log('## Balance');
-const balance = sumProductions(recycledPlasticFactory, 60);
+const balance = sumProductions(batteryFactory, 60);
 balance.forEach(itemState => {
     const diff = itemState.output - itemState.input;
     if (diff === 0) {

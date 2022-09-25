@@ -40,6 +40,7 @@ export enum Item {
     Cable,
 
     Water,
+    EmptyCanister,
 
     CrudeOil,
     PolymerResin,
@@ -57,7 +58,10 @@ export enum Item {
     AluminumIngot,
     AlcladAluminumSheet,
     AluminumCasing,
+    AluminaSolution,
+    PackagedAluminaSolution,
     HeatSink,
+    Battery,
 
     CrystalOscilator,
     Beacon,
