@@ -48,6 +48,7 @@ export function source(item: Item, building: Building, purity: Purity): Recipe |
         case Item.IronOre:
         case Item.CopperOre:
         case Item.Coal:
+        case Item.RawQuartz:
         case Item.CateriumOre:
         case Item.Bauxite:
         case Item.Sulfur:

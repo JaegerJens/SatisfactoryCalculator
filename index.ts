@@ -1,12 +1,12 @@
-import { batteryFactory } from "./factory/battery-factory.ts";
+import { highSpeedConnectorFactory } from "./factory/high-speed-connector-factory.ts";
 import { formatItem, formatNumber } from "./format.ts";
 import { sumProductions } from "./plan-factory.ts";
 
 console.log('## Factory');
-batteryFactory.forEach(prod => console.log(prod.toString()));
+highSpeedConnectorFactory.forEach(prod => console.log(prod.toString()));
 
 console.log('## Balance');
-const balance = sumProductions(batteryFactory, 60);
+const balance = sumProductions(highSpeedConnectorFactory, 60);
 balance.forEach(itemState => {
     const diff = itemState.output - itemState.input;
     if (diff === 0) {
