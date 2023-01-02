@@ -1,12 +1,12 @@
-import { highSpeedConnectorFactory } from "./factory/high-speed-connector-factory.ts";
+import { heavyModularFrameFactory } from "./factory/heavy-modular-frame.ts";
 import { formatItem, formatNumber } from "./format.ts";
 import { sumProductions } from "./plan-factory.ts";
 
 console.log('## Factory');
-highSpeedConnectorFactory.forEach(prod => console.log(prod.toString()));
+heavyModularFrameFactory.forEach(prod => console.log(prod.toString()));
 
 console.log('## Balance');
-const balance = sumProductions(highSpeedConnectorFactory, 60);
+const balance = sumProductions(heavyModularFrameFactory, 60);
 balance.forEach(itemState => {
     const diff = itemState.output - itemState.input;
     if (diff === 0) {
