@@ -24,6 +24,9 @@ const heavyModularFrameRecipes: SelectRecipe = item => {
         case Item.IronIngot: return PureIronIngot;
         case Item.CateriumOre:
             return source(item, Building.MinerMk3, Purity.Normal);
+        case Item.IronOre: return source(item, Building.MinerMk3, Purity.Normal);
+        case Item.Coal: return source(item, Building.MinerMk3, Purity.Normal);
+        case Item.Limestone: return source(item, Building.MinerMk3, Purity.Normal);
         default: return useBasicRecipes(item);
     }
 };
