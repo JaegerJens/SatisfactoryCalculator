@@ -2,6 +2,7 @@ import { Building } from "../buildings.ts";
 import { Item } from "../items.ts";
 import { planFactory } from "../plan-factory.ts";
 import { Production } from "../production.ts";
+import { WetConcrete } from "../recipes/concrete.ts";
 import { EncasedIndustrialPipe } from "../recipes/encased-industrial-beam.ts";
 import { HeavyEncasedFrame } from "../recipes/heavy-modular-frame.ts";
 import { useBasicRecipes } from "../recipes/index.ts";
@@ -24,6 +25,7 @@ const heavyModularFrameRecipes: SelectRecipe = item => {
         case Item.Wire: return IronWire;
         case Item.SteelIngot: return SolidSteelIngot;
         case Item.IronIngot: return PureIronIngot;
+        case Item.Concrete: return WetConcrete;
         case Item.IronOre: return source(item, Building.MinerMk3, Purity.Normal);
         case Item.Coal: return source(item, Building.MinerMk3, Purity.Normal);
         case Item.Limestone: return source(item, Building.MinerMk3, Purity.Normal);
